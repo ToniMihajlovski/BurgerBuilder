@@ -16,8 +16,6 @@ class App extends React.Component {
        </Layout>
       </div>
     );  
-  }
-  
+  }  
 }
-
 export default App;
