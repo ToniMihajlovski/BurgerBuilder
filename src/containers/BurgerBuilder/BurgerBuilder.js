@@ -25,13 +25,14 @@ class BurgerBuilder extends Component {
         error: false
     }
     componentDidMount(){
-        axios.get('https://react-my-burger-e786e.firebaseio.com/ingredients.json')
-        .then(response => {
-            this.setState({ingredients: response.data})
-        })
-        .catch(error => {
-            this.setState({error: true})
-        });
+      console.log(this.props);
+        // axios.get('https://react-my-burger-e786e.firebaseio.com/ingredients.json')
+        // .then(response => {
+        //     this.setState({ingredients: response.data})
+        // })
+        // .catch(error => {
+        //     this.setState({error: true})
+        // });
     }
     updatePurchaseState (ingredients) {
         //  const ingredients = {
@@ -110,8 +111,7 @@ class BurgerBuilder extends Component {
         {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
-        let orderSummary =  null;
-        
+        let orderSummary =  null;       
         let burger = this.state.error ? <p>Ingredients can't be loaded</p> : <Spinner />;
 
         if(this.state.ingredients){
