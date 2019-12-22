@@ -7,25 +7,17 @@ import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import axios from '../../axios-orders';
 import * as burgerBuilderActions from '../../store/actions/index';
+import axios from '../../axios-orders';
 
 class BurgerBuilder extends Component {
   state = {
     purchasing: false,
-    loading: false,
-    error: false
   }
   componentDidMount() {
-    console.log(this.props.ings);
-    // axios.get('https://react-my-burger-e786e.firebaseio.com/ingredients.json')
-    // .then(response => {
-    //     this.setState({ingredients: response.data})
-    // })
-    // .catch(error => {
-    //     this.setState({error: true})
-    // });
+    console.log(this.props.ings); 
   }
+
   updatePurchaseState(ingredients) {
     const sum = Object.keys(ingredients)
       .map(igKey => {
@@ -75,9 +67,6 @@ class BurgerBuilder extends Component {
             price={this.props.price} />
         </Auxiliary>
       );
-    }
-    if (this.state.loading) {
-      orderSummary = <Spinner />
     }
     //{salad:true, meat: false}
     return (
