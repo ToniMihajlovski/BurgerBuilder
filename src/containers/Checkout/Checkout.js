@@ -15,24 +15,20 @@ class Checkout extends Component {
   render() {
     let summary = <Redirect to='/' />
     if (this.props.ings) {
-      summary = (
+      summary = 
         <div>
           <CheckoutSummary
             ingredients={this.props.ings}
             checkoutCancelled={this.checkoutCancelledHandler}
             checkoutContinued={this.checkoutContinuedHandler}
           />
-
           <Route
             path={this.props.match.path + '/contact-data'}
             component={ContactData} /> }
           />
         </div>
-      )
     }
-    return (
-        {summary}
-    );
+    return summary
   };
 };
 
