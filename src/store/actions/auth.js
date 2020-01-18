@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
-import { updateObject } from '../utility';
+import { updateObject } from '../../shared/utility';
 
 export const authStart = () => {
   return {
